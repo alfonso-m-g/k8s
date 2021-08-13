@@ -20,3 +20,11 @@
 ### Run the container
 
 `docker run -d -p 8080:8080 --name kubernetes-example kubernetes-go`
+
+
+
+# Utilities
+
+### Run a temporal pod
+
+`kubectl run --rm -it podx --image nginx:alpine -- sh`
