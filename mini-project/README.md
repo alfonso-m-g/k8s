@@ -1,19 +1,22 @@
-# (Test) Execute the following commands to run the container and the application
+# Testing
 
+### Run the container
 `docker run --rm -dti -v $PWD/:/go --net host --name golang golang bash`
 
+## Run a bash terminal on the container
 `docker exec -it golang bash`
 
-``go run main.go`
+## Run the application
+`go run main.go`
 
 
 
-# (Deploy) 
+# Deployment
 
-## Create a docker container
+### Create a docker container
 
 `docker build -t kubernetes-hands-on -f Dockerfile .`
 
-## Run the container
+### Run the container
 
 `docker run -d -p 8080:8080 --name kubernetes-example kubernetes-go}`
