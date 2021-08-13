@@ -19,4 +19,4 @@
 
 ### Run the container
 
-`docker run -d -p 8080:8080 --name kubernetes-example kubernetes-go}`
+`docker run -d -p 8080:8080 --name kubernetes-example kubernetes-go`
