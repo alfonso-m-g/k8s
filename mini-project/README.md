@@ -1,23 +1,19 @@
-<h1>(Test) Execute the following commands to run the container and the application
+# (Test) Execute the following commands to run the container and the application
 
-`<addr>`docker run --rm -dti -v $PWD/:/go --net host --name golang golang bash
+`docker run --rm -dti -v $PWD/:/go --net host --name golang golang bash`
 
-`<addr>`docker exec -it golang bash
+`docker exec -it golang bash`
 
-`<addr>`go run main.go
+``go run main.go`
 
 
 
-<h1>(Deploy) 
+# (Deploy) 
 
-Create a docker container
+## Create a docker container
 
-`<addr>`docker build -t kubernetes-hands-on -f Dockerfile .
+`docker build -t kubernetes-hands-on -f Dockerfile .`
 
-Run the container
+## Run the container
 
-`<addr>`docker run -d -p 8080:8080 --name kubernetes-example kubernetes-go}
-
-# This is an <h1> tag
-## This is an <h2> tag
-###### This is an <h6> tag
+`docker run -d -p 8080:8080 --name kubernetes-example kubernetes-go}`
