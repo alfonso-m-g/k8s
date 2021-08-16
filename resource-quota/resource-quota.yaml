@@ -1,0 +1,48 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: dev
+  labels:
+    name: dev
+---
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: mem-cpu-demo
+  namespace: dev
+spec:
+  hard:
+    requests.cpu: "1"
+    requests.memory: 1Gi
+    limits.cpu: "2"
+    limits.memory: 2Gi
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kubernetes.io/change-cause: "Changes port to 110"
+  name: deployment-test
+  namespace: dev
+  labels:
+    app: frontend
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: frontend
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      containers:
+      - name: nginx-pod
+        image: nginx:alpine
+        resources:
+          limits:
+            memory: 500M
+            cpu: 500m
+          requests:
+            memory: 500M
+            cpu: 500m
