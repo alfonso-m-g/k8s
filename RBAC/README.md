@@ -119,3 +119,8 @@ Subjects:
   ----  ----     ---------
   User  alfonso  
 ```
+
+# Cluster Roles
+
+### Get cluster roles
+`kubectl get clusterroles`
